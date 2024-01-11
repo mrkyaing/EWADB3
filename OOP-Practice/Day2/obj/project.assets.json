@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\OOP-Practice\\Day2\\Day2.csproj",
+      "projectUniqueName": "D:\\EWADB3\\EWADB3\\OOP-Practice\\Day2\\Day2.csproj",
       "projectName": "Day2",
-      "projectPath": "D:\\OOP-Practice\\Day2\\Day2.csproj",
+      "projectPath": "D:\\EWADB3\\EWADB3\\OOP-Practice\\Day2\\Day2.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "D:\\OOP-Practice\\Day2\\obj\\",
+      "outputPath": "D:\\EWADB3\\EWADB3\\OOP-Practice\\Day2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",

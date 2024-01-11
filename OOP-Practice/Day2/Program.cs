@@ -1,6 +1,8 @@
 ﻿namespace Day2;
 using TeacherInfo;
 using StudentInfo;
+using System.Diagnostics;
+
 class Program
 {
 
@@ -11,7 +13,8 @@ class Program
             Console.WriteLine("Hello, World!");
             Teacher.ShowInfo();
             Student.ShowInfo();
-            
+            int line1 = 1;
+            int line2 = int.Parse("Test");
             Student s=new Student();
             s.Name="Su Su";
             s.SetAge(21);
@@ -44,18 +47,14 @@ class Program
             myCat.Speak();
 
         }
-        catch (IndexOutOfRangeException e1)
+        
+         catch (Exception ex)
         {      
-            Console.WriteLine("error occur because of "+e1.Message);
-        }
-         catch (NullReferenceException e1)
-        {      
-            Console.WriteLine("error occur because of "+e1.Message);
-        }
-         catch (Exception e1)
-        {      
-            Console.WriteLine("error occur because of "+e1.Message);
+        var st = new StackTrace(ex, true);
+        var frame = st.GetFrame(st.FrameCount - 1);
+        var linenumber = frame.GetFileLineNumber();
+        Console.WriteLine("error occur because of "+ex.Message);
+        Console.WriteLine(linenumber);
         }
     }
-
 }
