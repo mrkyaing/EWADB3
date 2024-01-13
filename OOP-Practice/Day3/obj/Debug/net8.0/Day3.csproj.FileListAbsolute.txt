@@ -1,0 +1,15 @@
+D:\EWADB3\EWADB3\OOP-Practice\Day3\bin\Debug\net8.0\Day3.exe
+D:\EWADB3\EWADB3\OOP-Practice\Day3\bin\Debug\net8.0\Day3.deps.json
+D:\EWADB3\EWADB3\OOP-Practice\Day3\bin\Debug\net8.0\Day3.runtimeconfig.json
+D:\EWADB3\EWADB3\OOP-Practice\Day3\bin\Debug\net8.0\Day3.dll
+D:\EWADB3\EWADB3\OOP-Practice\Day3\bin\Debug\net8.0\Day3.pdb
+D:\EWADB3\EWADB3\OOP-Practice\Day3\obj\Debug\net8.0\Day3.GeneratedMSBuildEditorConfig.editorconfig
+D:\EWADB3\EWADB3\OOP-Practice\Day3\obj\Debug\net8.0\Day3.AssemblyInfoInputs.cache
+D:\EWADB3\EWADB3\OOP-Practice\Day3\obj\Debug\net8.0\Day3.AssemblyInfo.cs
+D:\EWADB3\EWADB3\OOP-Practice\Day3\obj\Debug\net8.0\Day3.csproj.CoreCompileInputs.cache
+D:\EWADB3\EWADB3\OOP-Practice\Day3\obj\Debug\net8.0\Day3.sourcelink.json
+D:\EWADB3\EWADB3\OOP-Practice\Day3\obj\Debug\net8.0\Day3.dll
+D:\EWADB3\EWADB3\OOP-Practice\Day3\obj\Debug\net8.0\refint\Day3.dll
+D:\EWADB3\EWADB3\OOP-Practice\Day3\obj\Debug\net8.0\Day3.pdb
+D:\EWADB3\EWADB3\OOP-Practice\Day3\obj\Debug\net8.0\Day3.genruntimeconfig.cache
+D:\EWADB3\EWADB3\OOP-Practice\Day3\obj\Debug\net8.0\ref\Day3.dll
