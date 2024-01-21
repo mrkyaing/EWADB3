@@ -47,11 +47,29 @@ namespace HelloWorldMVC.Controllers
             byte[] byteInfFile=System.IO.File.ReadAllBytes(filePath);
             return File(byteInfFile,"text/png",fileName);
         }
-
+        //localhost:5082/home/fullname?firstname=Mg&lastname=Mg
         public ViewResult FullName(string firstName,string lastName){
             string FullName="Hello,"+firstName+" " +lastName;
             ViewBag.FullNameInfo=FullName;
             return View();
         }
+        //home/iam
+        [ActionName("iam")]
+        public IActionResult SayYourName(){
+            return View("me");
+        }
+         //home/Hi
+        public int Hi()=>30;
+       
+        [NonAction]
+         public int HiHi()=>60;
+         
+        //http://locahost:3000/home/TaxCalculate
+        [HttpPost]
+         public string TaxCalculate(decimal TotalPrice,int Pertance){
+            decimal taxReuslt=TotalPrice/100*Pertance;
+            return $"Tax Amount {taxReuslt}";
+         }
+
     }
 }

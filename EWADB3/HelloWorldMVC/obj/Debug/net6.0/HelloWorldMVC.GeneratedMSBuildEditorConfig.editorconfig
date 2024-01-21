@@ -29,3 +29,15 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/EWADB3/EWADB3/EWADB3/HelloWorldMVC/Views/Home/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
+
+[D:/EWADB3/EWADB3/EWADB3/HelloWorldMVC/Views/Home/me.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxtZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/EWADB3/EWADB3/EWADB3/HelloWorldMVC/Views/Register/AboutMe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJcQWJvdXRNZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/EWADB3/EWADB3/EWADB3/HelloWorldMVC/Views/Register/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
