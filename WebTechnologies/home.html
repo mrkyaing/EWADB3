@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>home</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>          
+            body{
+                background-color: cyan;
+            }
+            .clickme{
+                color: green;
+            }
+            .changecolor{
+                color: red;
+            }
+        </style>
+        <script>
+            function sayHello(){
+                var name=document.getElementById("txtName").value;
+                alert("Hello,"+name+" nice to see you!!");
+            }
+            function sayChangeColor(){
+                document.getElementById("p").style.color="Black";
+            }
+        </script>
+    </head>
+    <body>
+        <label>Type Your Name:</label>
+        <input type="text" id="txtName">
+       <button onclick="sayHello();" class="clickme">Click me</button>
+       <button onclick="sayChangeColor();" class="changecolor">Change Color</button>
+       <p style="color: red;text-align: center;" id="p">
+         This is my paragraph.
+       </p>
+    </body>
+</html>
