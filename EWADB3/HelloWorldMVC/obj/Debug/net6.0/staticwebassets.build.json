@@ -1,11 +1,39 @@
 {
   "Version": 1,
-  "Hash": "jzoP8f+8LHKHjNGYHGvdfDfD/GvP4TCS67X9U58rGM4=",
+  "Hash": "zLOaMfAYeJ9qXFEF6oDhuLboKhyUTgOX+ohw25olxI0=",
   "Source": "HelloWorldMVC",
   "BasePath": "_content/HelloWorldMVC",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "HelloWorldMVC\\wwwroot",
+      "Source": "HelloWorldMVC",
+      "ContentRoot": "D:\\EWADB3\\EWADB3\\EWADB3\\HelloWorldMVC\\wwwroot\\",
+      "BasePath": "_content/HelloWorldMVC",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\EWADB3\\EWADB3\\EWADB3\\HelloWorldMVC\\wwwroot\\DownloadFiles\\KAPYINFOS.png",
+      "SourceId": "HelloWorldMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\EWADB3\\EWADB3\\EWADB3\\HelloWorldMVC\\wwwroot\\",
+      "BasePath": "_content/HelloWorldMVC",
+      "RelativePath": "DownloadFiles/KAPYINFOS.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\DownloadFiles\\KAPYINFOS.png"
+    }
+  ]
 }

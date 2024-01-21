@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC\\source\\repos\\EWADB3\\HelloWorldMVC\\HelloWorldMVC.csproj",
+      "projectUniqueName": "D:\\EWADB3\\EWADB3\\EWADB3\\HelloWorldMVC\\HelloWorldMVC.csproj",
       "projectName": "HelloWorldMVC",
-      "projectPath": "C:\\Users\\PC\\source\\repos\\EWADB3\\HelloWorldMVC\\HelloWorldMVC.csproj",
+      "projectPath": "D:\\EWADB3\\EWADB3\\EWADB3\\HelloWorldMVC\\HelloWorldMVC.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC\\source\\repos\\EWADB3\\HelloWorldMVC\\obj\\",
+      "outputPath": "D:\\EWADB3\\EWADB3\\EWADB3\\HelloWorldMVC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",

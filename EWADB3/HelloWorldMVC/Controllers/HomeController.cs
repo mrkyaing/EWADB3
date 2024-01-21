@@ -4,6 +4,12 @@ namespace HelloWorldMVC.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        public HomeController(IWebHostEnvironment webHostEnvironment)
+        {
+            _webHostEnvironment = webHostEnvironment;
+            
+        }
         //http://localhost:3000/home/index
         public IActionResult Index()
         {
@@ -33,6 +39,19 @@ namespace HelloWorldMVC.Controllers
         public string Add(int n1,int n2)
         {
             return $"Calculated Result:{(n1 + n2).ToString()}";
+        }
+
+        public FileResult Download(){
+            string fileName="KAPYINFOS.png";
+            string filePath=Path.Combine(_webHostEnvironment.WebRootPath,"DownloadFiles//"+fileName);
+            byte[] byteInfFile=System.IO.File.ReadAllBytes(filePath);
+            return File(byteInfFile,"text/png",fileName);
+        }
+
+        public ViewResult FullName(string firstName,string lastName){
+            string FullName="Hello,"+firstName+" " +lastName;
+            ViewBag.FullNameInfo=FullName;
+            return View();
         }
     }
 }

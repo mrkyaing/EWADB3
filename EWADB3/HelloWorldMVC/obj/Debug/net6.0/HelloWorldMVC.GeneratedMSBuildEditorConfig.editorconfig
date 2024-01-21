@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\EWADB3\EWADB3\EWADB3\HelloWorldMVC
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/EWADB3/EWADB3/EWADB3/HelloWorldMVC/Views/Home/FullName.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGdWxsTmFtZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/EWADB3/EWADB3/EWADB3/HelloWorldMVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
