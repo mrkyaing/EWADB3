@@ -1,0 +1,36 @@
+﻿<center>
+    <div>
+        <form action="/Convertor/CurrencyConvertorV1" method="post">
+            <h1>Currency Convertor Version 1</h1>
+            <table>
+                <tr>
+                    <td>Choose Currency</td>
+                    <td>
+                        <select name="selectedCurrency">
+                            <option value="x">--SLECT ONE--</option>
+                            <option value="SDG">Sinapore Dolor (s$)</option>
+                            <option value="USD">American Dolor($)</option>
+                            <option value="TBH">Thai Baht</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Amount </td>
+                    <td>
+                        <input type="text" name="amout" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Result (MMK) </td>
+                    <td>
+                        <input type="text" value="@ViewBag.Amount" readonly />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Convert" /> </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</center>

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldMVC", "HelloWorldMVC\HelloWorldMVC.csproj", "{B6277659-5014-4BC2-92A1-71E1BEF18A21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWorldMVC", "HelloWorldMVC\HelloWorldMVC.csproj", "{B6277659-5014-4BC2-92A1-71E1BEF18A21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkOut", "WorkOut\WorkOut.csproj", "{9AB93069-3A52-45F5-9F40-8AF6553B6F68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B6277659-5014-4BC2-92A1-71E1BEF18A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6277659-5014-4BC2-92A1-71E1BEF18A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6277659-5014-4BC2-92A1-71E1BEF18A21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AB93069-3A52-45F5-9F40-8AF6553B6F68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AB93069-3A52-45F5-9F40-8AF6553B6F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AB93069-3A52-45F5-9F40-8AF6553B6F68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AB93069-3A52-45F5-9F40-8AF6553B6F68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

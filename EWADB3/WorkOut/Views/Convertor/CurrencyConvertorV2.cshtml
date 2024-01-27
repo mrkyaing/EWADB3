@@ -1,0 +1,60 @@
+﻿<head>
+    <script type="text/javascript">
+        function filledInputData() {
+            if ("@ViewBag.selectedCurrency" != "") {
+                document.getElementById("selCurrency").value = "@ViewBag.selectedCurrency";
+            }
+            if ("@ViewBag.inputAmount" != "0") {
+                document.getElementById("txtAmount").value = "@ViewBag.inputAmount";
+            }
+        }
+    </script>
+</head>
+<body onload="filledInputData();">
+    <center>
+        <div>
+            <form action="/Convertor/CurrencyConvertorV2" method="post">
+                <h1>Currency Convertor Version 2</h1>
+                @if (ViewBag.Errors != null)
+                {
+                    <ul>
+                        @foreach (var s in ViewBag.Errors)
+                        {
+                            <li style="color:red;text-align:left">@s</li>
+                        }
+                    </ul>
+                }
+                <table>
+                    <tr>
+                        <td>Choose Currency</td>
+                        <td>
+                            <select name="selectedCurrency" id="selCurrency">
+                                <option value="">--SLECT ONE--</option>
+                                <option value="SDG">Sinapore Dolor (s$)</option>
+                                <option value="USD">American Dolor($)</option>
+                                <option value="TBH">Thai Baht</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Amount </td>
+                        <td>
+                            <input type="number" name="amout" id="txtAmount" required/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Result (MMK) </td>
+                        <td>
+                            <input type="text" value="@ViewBag.Amount" readonly />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Convert" /> </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </center>
+</body>
+
