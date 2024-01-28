@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<head>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+</head>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p id="myTime"></p>
+    <button id="btnRefresh">Show me current time</button>
+       <p id="clickTime"></p>
+    <button id="btnCounter">Counting a click</button>
+</div>
+<script>
+    $("#btnRefresh").click(function () {
+        var url = "/Home/TellMeNow";
+        $.get(url, null, function (response) {
+            $("#myTime").html(response);
+        });
+    });
+    $("#btnCounter").click(function () {
+        var url = "/Home/Count";
+        $.get(url, null, function (response) {
+            $("#clickTime").html(response);
+        });
+    });
+</script>

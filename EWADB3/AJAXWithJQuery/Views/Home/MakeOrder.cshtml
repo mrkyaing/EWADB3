@@ -1,0 +1,46 @@
+﻿<head>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+</head>
+<div class="mb-3">
+    <label class="form-label">Order Id</label>
+    <input type="text" class="form-control" id="txtOrderId" placeholder="Please Type Order Id">
+</div>
+<div class="mb-3">
+    <label class="form-label">Unit Price</label>
+    <input type="text" class="form-control" id="txtUnitPrice" placeholder="Please Type Unit Price ">
+</div>
+<div class="mb-3">
+    <label class="form-label">Quantity </label>
+    <input type="text" class="form-control" id="txtQuantity" placeholder="Please Type Quantity ">
+</div>
+<div class="mb-3">
+    <label class="form-label">Total </label>
+    <input type="text" class="form-control" id="txtTotal"  readonly>
+</div>
+<div class="mb-3">
+    <input type="button" class="btn btn-primary" id="btnSubmit" value="Make an Order"/>
+</div>
+<script>
+    $("#btnSubmit").click(function () {
+        var url = "/Home/MakeOrder";
+        var order = {};
+        order.OrderId = $("#txtOrderId").val();//get the user 's input in the order id text box 
+        order.UnitPrice = $("#txtUnitPrice").val();
+        order.Quantity = $("#txtQuantity").val();
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: order,
+            success: function (res) {    
+                var total = JSON.stringify(res);
+                alert(total);
+                $("#txtTotal").val(total);
+            },
+            failure: function (err) {
+                console.log(err);
+            }
+        });
+    });
+</script>
+
+
