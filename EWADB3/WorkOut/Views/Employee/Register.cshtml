@@ -1,0 +1,68 @@
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<div class="container">
+    @if (ViewBag.Info != null)
+    {
+        <div>
+            <h1>@ViewBag.Info</h1>
+        </div>
+    }
+    <form action="/Employee/Register" method="post">
+        <div class="mb-3">
+            <label for="Id" class="form-label">Id</label>
+            <input type="text" class="form-control" name="Id">
+        </div>
+        <div class="mb-3">
+            <label for="FirstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" name="FirstName">
+        </div>
+        <div class="mb-3">
+            <label for="LastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" name="LastName">
+        </div>
+        <div class="mb-3">
+            <label for="Email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="Email">
+        </div>
+        <div class="mb-3">
+            <label for="Coutnry" class="form-label">Country</label>
+            <select name="HomeAddress.Country" class="form-select">
+                <option value="MM">Myanmar</option>
+                <option value="JP">Japan</option>
+                <option value="TH">Thai</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="City" class="form-label">City</label>
+            <select name="HomeAddress.City" class="form-select">
+                <option value="YGN">YANGON</option>
+                <option value="MDY">Mandalay</option>
+                <option value="TK">Tokayo</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="Township" class="form-label">Township</label>
+            <select name="HomeAddress.Township" class="form-select">
+                <option value="HL">Hlaing</option>
+                <option value="KM">Kamayaut</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="Street" class="form-label">Street</label>
+            <input type="text" class="form-control" name="HomeAddress.Street">
+        </div>
+        <div class="mb-3">
+            <label for="PostalCode" class="form-label">PostalCode</label>
+            <input type="text" class="form-control" name="HomeAddress.PostalCode">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+    
+
