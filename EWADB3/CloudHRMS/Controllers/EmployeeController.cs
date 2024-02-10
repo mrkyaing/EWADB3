@@ -1,7 +1,6 @@
 ﻿using CloudHRMS.Models.DataModels;
 using CloudHRMS.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Net.Sockets;
 using System.Net;
 using CloudHRMS.DAO;
@@ -15,10 +14,6 @@ namespace CloudHRMS.Controllers
         public EmployeeController(ApplicationDbContext applicationDbContext)
         {
             this._applicationDbContext = applicationDbContext;
-        }
-        public IActionResult Index()
-        {
-            return View();
         }
         public IActionResult Entry() => View();
 
@@ -44,15 +39,53 @@ namespace CloudHRMS.Controllers
                 };
                 _applicationDbContext.Employees.Add(employee);
                 _applicationDbContext.SaveChanges();
-                ViewBag.Info = "successfully save a record to the system";
+                TempData["info"] = "Save process is completed successfully.";
             }
-            catch (Exception e) 
+            catch (Exception ex)
             {
-                ViewBag.Info = "Error occur when  saving a record  to the system";
+                TempData["info"] = "Error occur when save process was done.";
             }
-            return View();
+            return RedirectToAction("List");
         }
-        private  string GetLocalIPAddress()
+
+        public IActionResult List()
+        {
+            //Data Exchange from Data Model to View Model
+            //DTO
+            IList<EmployeeViewModel> employees = _applicationDbContext.Employees.Select(s => new EmployeeViewModel
+            {
+                Id = s.Id,
+                Name = s.Name,
+                Email = s.Email,
+                DOB = s.DOB,
+                BasicSalary = s.BasicSalary,
+                Address = s.Address,
+                Gender = s.Gender,
+                Phone = s.Phone,
+                Code = s.Code,
+                DOE = s.DOE
+            }).ToList();
+            return View(employees);
+        }
+        public IActionResult Delete(string id)
+        {
+            try
+            {
+                var employee = _applicationDbContext.Employees.Find(id);
+                if (employee is not null)
+                {
+                    _applicationDbContext.Remove(employee);
+                    _applicationDbContext.SaveChanges();
+                }
+                TempData["info"] = "Delete process is completed successfully.";
+            }
+            catch (Exception ex)
+            {
+                TempData["info"] = "Error occur when delete process was done.";
+            }
+            return RedirectToAction("List");
+        }
+        private string GetLocalIPAddress()
         {
             var host = Dns.GetHostEntry(Dns.GetHostName());
             foreach (var ip in host.AddressList)

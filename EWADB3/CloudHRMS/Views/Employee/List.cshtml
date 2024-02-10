@@ -1,0 +1,50 @@
+﻿@model IList<EmployeeViewModel>
+<h1>Employe List Information</h1>
+@if (TempData["info"] != null)
+{
+    <div class="alert alert-info">
+        @TempData["info"]
+    </div>
+}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Code</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">DOB</th>
+            <th scope="col">DOE</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Address</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int index = 1;
+        }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@index</th>
+                <td>@item.Code</td>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+                <td>@item.DOB.ToString("dd-MM-yyyy")</td>
+                <td>@item.DOE.ToString("dd-MM-yyyy")</td>
+                <td>@item.BasicSalary</td>
+                <td>@item.Phone</td>
+                <td>@item.Gender</td>
+                <td>@item.Address</td>
+                <td>
+                    <a>Edit</a>
+                    <a href="/employee/delete?id=@item.Id" onclick="return confirm('are you sure to delete this record?');"> Delete</a>
+                </td>
+            </tr>
+            index++;
+        }
+    </tbody>
+</table>
