@@ -41,7 +41,7 @@
                 <td>@item.Address</td>
                 <td>
                     <a>Edit</a>
-                    <a href="/employee/delete?id=@item.Id" onclick="return confirm('are you sure to delete this record?');"> Delete</a>
+                    <a asp-action="Delete" asp-controller="Employee" asp-route-id="@item.Id" onclick="return confirm('are you sure to delete this record?');"> Delete</a>
                 </td>
             </tr>
             index++;

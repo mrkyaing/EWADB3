@@ -15,13 +15,25 @@ namespace CloudHRMS.Controllers
         {
             this._applicationDbContext = applicationDbContext;
         }
-        public IActionResult Entry() => View();
+        public IActionResult Entry() =>View();
 
         [HttpPost]
-        public IActionResult Entry(EmployeeViewModel ui)
+        public IActionResult Entry(EmployeeViewModel ui)//e001 
         {
             try
             {
+                var IsValidCode = _applicationDbContext.Employees.Where(w => w.Code == ui.Code).Any();
+                if (IsValidCode)
+                {
+                    ViewBag.info = "Code is duplicate in system.";
+                    return View();
+                }
+                var IsValidEmail = _applicationDbContext.Employees.Where(w => w.Email == ui.Email).Any();
+                if (IsValidEmail)
+                {
+                    ViewBag.info = "Email is duplicate in system.";
+                    return View();
+                }
                 //Data exchange from view model to data model
                 var employee = new EmployeeEntity()
                 {
