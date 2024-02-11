@@ -1,8 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
 namespace CloudHRMS.Models.DataModels
 {
-    public class BaseEntity
+    public abstract class BaseEntity
     {
         [Key]
         public string Id { get; set; }

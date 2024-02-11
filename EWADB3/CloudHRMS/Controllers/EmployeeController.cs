@@ -97,6 +97,54 @@ namespace CloudHRMS.Controllers
             }
             return RedirectToAction("List");
         }
+       public IActionResult Edit(string id)
+        {
+            EmployeeViewModel employee = _applicationDbContext.Employees.Where(x => x.Id == id).Select(s => new EmployeeViewModel
+            {
+                Id = s.Id,
+                Name = s.Name,
+                Email = s.Email,
+                DOB = s.DOB,
+                BasicSalary = s.BasicSalary,
+                Address = s.Address,
+                Gender = s.Gender,
+                Phone = s.Phone,
+                Code = s.Code,
+                DOE = s.DOE
+            }).SingleOrDefault();
+            return View(employee);
+        }
+        [HttpPost]
+        public IActionResult Update(EmployeeViewModel ui)
+        {
+            try
+            {
+                //Data exchange from view model to data model
+                var employee = new EmployeeEntity()
+                {
+                    Id = ui.Id,//update the recrod with  the existing id 
+                    Code = ui.Code,
+                    Name = ui.Name,
+                    Email = ui.Email,
+                    Phone = ui.Phone,
+                    DOB = ui.DOB,
+                    DOE = ui.DOE,
+                    Address = ui.Address,
+                    BasicSalary = ui.BasicSalary,
+                    Gender = ui.Gender,
+                    IpAddress = this.GetLocalIPAddress(),
+                    ModifiedAt = DateTime.Now
+                };
+                _applicationDbContext.Employees.Update(employee);
+                _applicationDbContext.SaveChanges();
+                TempData["info"] = "Update process is completed successfully.";
+            }
+            catch (Exception ex)
+            {
+                TempData["info"] = "Error occur when update process was done.";
+            }
+            return RedirectToAction("List");
+        }
         private string GetLocalIPAddress()
         {
             var host = Dns.GetHostEntry(Dns.GetHostName());

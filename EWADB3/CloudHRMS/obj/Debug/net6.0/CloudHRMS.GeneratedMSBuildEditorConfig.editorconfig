@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\EWADB3\EWADB3\EWADB3\CloudHRMS
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/EWADB3/EWADB3/EWADB3/CloudHRMS/Views/Employee/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/EWADB3/EWADB3/EWADB3/CloudHRMS/Views/Employee/Entry.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRW50cnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
