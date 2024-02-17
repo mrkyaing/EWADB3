@@ -22,5 +22,11 @@ namespace CloudHRMS.Models.ViewModels
         public string Gender { get; set; }
         public string? Phone { get; set; }
         public string? Address { get; set; }
+
+        public string DepartmentId { get; set; }//for entry / update 
+        public string PositionId { get; set; }//for ui entry/update
+
+        public  string DepartmentInfo { get; set; }
+        public string PositionInfo { get; set; }
     }
 }

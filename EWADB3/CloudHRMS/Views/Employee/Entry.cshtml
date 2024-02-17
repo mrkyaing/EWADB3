@@ -28,6 +28,28 @@
             <input type="date" name="DOE" class="form-control">
         </div>
         <div class="mb-3">
+            <label for="Department" class="form-label">Department</label>
+        <select name="DepartmentId" class="form-select" >
+                <option value="x" selected>--select department--</option>
+                @foreach (var department in ViewBag.Departments)
+                {
+                    <option value="@department.Id">@department.Code</option>
+                }
+        </select>
+        </div>
+        
+        <div class="mb-3">
+            <label for="Position" class="form-label">Position</label>
+            <select name="PositionId" class="form-select">
+                <option value="x" selected>--select position--</option>
+                @foreach (var department in ViewBag.Positions)
+                {
+                    <option value="@department.Id">@department.Code</option>
+                }
+            </select>
+        </div>
+        
+        <div class="mb-3">
             <label for="BasicSalary" class="form-label">Basic Salary</label>
             <input type="text" name="BasicSalary" class="form-control" placeholder="Enter Basic Salary ... ">
         </div>

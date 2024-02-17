@@ -30,6 +30,39 @@
             <input type="date" name="DOE" class="form-control" value="@Model.DOE.ToString("yyyy-MM-dd")">
         </div>
         <div class="mb-3">
+            <label for="Department" class="form-label">Department</label>
+            <select name="DepartmentId" class="form-select">
+                @foreach (var department in ViewBag.Departments)
+                {
+                    if (@department.Id == Model.DepartmentId)
+                    {
+                        <option value="@department.Id" selected>@department.Code</option>
+                    }
+                    else
+                    {
+                        <option value="@department.Id">@department.Code</option>
+                    }
+                }
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="Position" class="form-label">Position</label>
+            <select name="PositionId" class="form-select">
+                @foreach (var position in ViewBag.Positions)
+                {
+                    if (@position.Id == Model.PositionId)
+                    {
+                        <option value="@position.Id" selected>@position.Code</option>
+                    }
+                    else
+                    {
+                        <option value="@position.Id">@position.Code</option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="mb-3">
             <label for="BasicSalary" class="form-label">Basic Salary</label>
             <input type="text" name="BasicSalary" class="form-control" value="@Model.BasicSalary">
         </div>

@@ -1,9 +1,8 @@
 ﻿using CloudHRMS.Models.DataModels;
 using CloudHRMS.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Sockets;
-using System.Net;
 using CloudHRMS.DAO;
+
 
 namespace CloudHRMS.Controllers
 {
@@ -15,7 +14,22 @@ namespace CloudHRMS.Controllers
         {
             this._applicationDbContext = applicationDbContext;
         }
-        public IActionResult Entry() =>View();
+        public IActionResult Entry()
+        {
+            var departments = _applicationDbContext.Departments.Select(s => new DepartmentViewModel
+            {
+                Id=s.Id,
+                Code=s.Code
+            }).OrderBy(o=>o.Code).ToList();
+            ViewBag.Departments = departments;
+            var positions = _applicationDbContext.Positions.Select(s => new PositionViewModel
+            {
+                Id = s.Id,
+                Code = s.Code
+            }).OrderBy(o => o.Code).ToList();
+            ViewBag.Positions = positions;
+            return View();
+        }
 
         [HttpPost]
         public IActionResult Entry(EmployeeViewModel ui)//e001 
@@ -47,7 +61,8 @@ namespace CloudHRMS.Controllers
                     Address = ui.Address,
                     BasicSalary = ui.BasicSalary,
                     Gender = ui.Gender,
-                    IpAddress = this.GetLocalIPAddress()
+                    DepartmentId=ui.DepartmentId,
+                    PositionId=ui.PositionId
                 };
                 _applicationDbContext.Employees.Add(employee);
                 _applicationDbContext.SaveChanges();
@@ -64,18 +79,25 @@ namespace CloudHRMS.Controllers
         {
             //Data Exchange from Data Model to View Model
             //DTO
-            IList<EmployeeViewModel> employees = _applicationDbContext.Employees.Select(s => new EmployeeViewModel
+            IList<EmployeeViewModel> employees =(from e in _applicationDbContext.Employees
+                                                                                         join d in _applicationDbContext.Departments
+                                                                                         on e.DepartmentId equals d.Id
+                                                                                         join p in _applicationDbContext.Positions
+                                                                                         on e.PositionId equals p.Id select new EmployeeViewModel
+            //IList<EmployeeViewModel> employees = _applicationDbContext.Employees.Select(s => new EmployeeViewModel
             {
-                Id = s.Id,
-                Name = s.Name,
-                Email = s.Email,
-                DOB = s.DOB,
-                BasicSalary = s.BasicSalary,
-                Address = s.Address,
-                Gender = s.Gender,
-                Phone = s.Phone,
-                Code = s.Code,
-                DOE = s.DOE
+                Id = e.Id,
+                Name = e.Name,
+                Email = e.Email,
+                DOB = e.DOB,
+                BasicSalary = e.BasicSalary,
+                Address = e.Address,
+                Gender = e.Gender,
+                Phone = e.Phone,
+                Code = e.Code,
+                DOE = e.DOE,
+                DepartmentInfo=d.Name,//_applicationDbContext.Departments.Where(d=>d.Id==s.DepartmentId).FirstOrDefault().Name,
+                PositionInfo=p.Name//_applicationDbContext.Positions.Where(d => d.Id == s.PositionId).FirstOrDefault().Name,
             }).ToList();
             return View(employees);
         }
@@ -99,6 +121,17 @@ namespace CloudHRMS.Controllers
         }
        public IActionResult Edit(string id)
         {
+            var departments = _applicationDbContext.Departments.Select(s => new DepartmentViewModel
+            {
+                Id = s.Id,
+                Code = s.Code
+            }).OrderBy(o => o.Code).ToList();
+          
+            var positions = _applicationDbContext.Positions.Select(s => new PositionViewModel
+            {
+                Id = s.Id,
+                Code = s.Code
+            }).OrderBy(o => o.Code).ToList();        
             EmployeeViewModel employee = _applicationDbContext.Employees.Where(x => x.Id == id).Select(s => new EmployeeViewModel
             {
                 Id = s.Id,
@@ -110,8 +143,12 @@ namespace CloudHRMS.Controllers
                 Gender = s.Gender,
                 Phone = s.Phone,
                 Code = s.Code,
-                DOE = s.DOE
+                DOE = s.DOE,
+                DepartmentId=s.DepartmentId,
+                PositionId=s.PositionId
             }).SingleOrDefault();
+            ViewBag.Departments = departments;
+            ViewBag.Positions = positions;
             return View(employee);
         }
         [HttpPost]
@@ -132,8 +169,9 @@ namespace CloudHRMS.Controllers
                     Address = ui.Address,
                     BasicSalary = ui.BasicSalary,
                     Gender = ui.Gender,
-                    IpAddress = this.GetLocalIPAddress(),
-                    ModifiedAt = DateTime.Now
+                    ModifiedAt = DateTime.Now,
+                    DepartmentId = ui.DepartmentId,
+                    PositionId = ui.PositionId
                 };
                 _applicationDbContext.Employees.Update(employee);
                 _applicationDbContext.SaveChanges();
@@ -144,18 +182,6 @@ namespace CloudHRMS.Controllers
                 TempData["info"] = "Error occur when update process was done.";
             }
             return RedirectToAction("List");
-        }
-        private string GetLocalIPAddress()
-        {
-            var host = Dns.GetHostEntry(Dns.GetHostName());
-            foreach (var ip in host.AddressList)
-            {
-                if (ip.AddressFamily == AddressFamily.InterNetwork)
-                {
-                    return ip.ToString();
-                }
-            }
-            throw new Exception("No network adapters with an IPv4 address in the system!");
-        }
+        }       
     }
 }
