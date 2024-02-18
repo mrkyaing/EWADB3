@@ -84,7 +84,6 @@ namespace CloudHRMS.Controllers
                                                                                          on e.DepartmentId equals d.Id
                                                                                          join p in _applicationDbContext.Positions
                                                                                          on e.PositionId equals p.Id select new EmployeeViewModel
-            //IList<EmployeeViewModel> employees = _applicationDbContext.Employees.Select(s => new EmployeeViewModel
             {
                 Id = e.Id,
                 Name = e.Name,
@@ -96,8 +95,8 @@ namespace CloudHRMS.Controllers
                 Phone = e.Phone,
                 Code = e.Code,
                 DOE = e.DOE,
-                DepartmentInfo=d.Name,//_applicationDbContext.Departments.Where(d=>d.Id==s.DepartmentId).FirstOrDefault().Name,
-                PositionInfo=p.Name//_applicationDbContext.Positions.Where(d => d.Id == s.PositionId).FirstOrDefault().Name,
+                DepartmentInfo=d.Name,
+                PositionInfo=p.Name
             }).ToList();
             return View(employees);
         }

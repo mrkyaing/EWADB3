@@ -1,44 +1,27 @@
-﻿using CloudHRMS.DAO;
-using CloudHRMS.Models.DataModels;
-using CloudHRMS.Models.ViewModels;
+﻿using CloudHRMS.Models.ViewModels;
+using CloudHRMS.Services;
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Sockets;
-using System.Net;
 namespace CloudHRMS.Controllers
 {
     public class PositionController : Controller
     {
-        private readonly ApplicationDbContext _applicationDbContext;
+        private readonly IPositionService _positionService;
 
-        public PositionController(ApplicationDbContext applicationDbContext)
+        public PositionController(IPositionService positionService)
         {
-            this._applicationDbContext = applicationDbContext;
+            this._positionService = positionService;
         }
         public IActionResult List() //Show
-        {
-            IList<PositionViewModel> positions = _applicationDbContext.Positions.Select(
-                 s => new PositionViewModel
-                 {
-                     Id = s.Id,
-                     Code = s.Code,
-                     Name = s.Name,
-                     Level = s.Level,
-                 }).ToList();
-            return View(positions);
+        {      
+            return View(_positionService.GetAll());
         }
 
         public IActionResult Edit(string id)
         {
             if (id != null)
             {
-                PositionViewModel position = _applicationDbContext.Positions.Where(x => x.Id == id).Select(s => new PositionViewModel
-                {
-                    Id = s.Id,
-                    Code = s.Code,
-                    Name = s.Name,
-                    Level = s.Level,
-                }).SingleOrDefault();
-                return View(position);
+                
+                return View(_positionService.GetById(id));
             }
             else
             {
@@ -49,12 +32,7 @@ namespace CloudHRMS.Controllers
         {
             try
             {
-                var position = _applicationDbContext.Positions.Find(id);
-                if (position is not null)
-                {
-                    _applicationDbContext.Remove(position);
-                    _applicationDbContext.SaveChanges();
-                }
+                _positionService.Delete(id);
                 TempData["Info"] = "Save Successfully";
             }
             catch (Exception ex)
@@ -64,22 +42,12 @@ namespace CloudHRMS.Controllers
             return RedirectToAction("List");
         }
         public IActionResult Entry() => View();
-
         [HttpPost]
         public IActionResult Entry(PositionViewModel ui)
         {
             try
             {
-                //Data exchange from view model to data model
-                var position = new PositionEntity()
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    Code = ui.Code,
-                    Name = ui.Name,
-                    Level = ui.Level
-                };
-                _applicationDbContext.Positions.Add(position);
-                _applicationDbContext.SaveChanges();
+                _positionService.Create(ui);
                 ViewBag.Info = "successfully save a record to the system";
             }
             catch (Exception ex)
