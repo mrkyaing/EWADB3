@@ -297,6 +297,10 @@
       "PackagePath": "staticwebassets\\images\\0268a27c-9e90-4cec-8e81-55a00e95a100_photo_2024-02-25_14-42-36.jpg"
     },
     {
+      "Id": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\wwwroot\\images\\52960740-f17d-47b9-a7ad-9c0990ae2bbb_mk.jpeg",
+      "PackagePath": "staticwebassets\\images\\52960740-f17d-47b9-a7ad-9c0990ae2bbb_mk.jpeg"
+    },
+    {
       "Id": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

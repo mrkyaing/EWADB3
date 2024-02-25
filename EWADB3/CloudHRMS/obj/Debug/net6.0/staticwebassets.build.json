@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ce9hNmt2A94NExeMZgO6Gsg0WruyJ5KWgWaSMLyoAzE=",
+  "Hash": "UND5CpBT6sxwu8FNQ0Ln1Xuv6cg6zpgSM4mG34z3LQs=",
   "Source": "CloudHRMS",
   "BasePath": "_content/CloudHRMS",
   "Mode": "Default",
@@ -2580,6 +2580,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\0268a27c-9e90-4cec-8e81-55a00e95a100_photo_2024-02-25_14-42-36.jpg"
+    },
+    {
+      "Identity": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\wwwroot\\images\\52960740-f17d-47b9-a7ad-9c0990ae2bbb_mk.jpeg",
+      "SourceId": "CloudHRMS",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\wwwroot\\",
+      "BasePath": "_content/CloudHRMS",
+      "RelativePath": "images/52960740-f17d-47b9-a7ad-9c0990ae2bbb_mk.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\52960740-f17d-47b9-a7ad-9c0990ae2bbb_mk.jpeg"
     },
     {
       "Identity": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\wwwroot\\js\\site.js",
