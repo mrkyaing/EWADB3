@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "t6h0QbhsIH8vwysEymlin3F8V9uoHQQHU+Juz4vsu9U=",
+  "Hash": "ce9hNmt2A94NExeMZgO6Gsg0WruyJ5KWgWaSMLyoAzE=",
   "Source": "CloudHRMS",
   "BasePath": "_content/CloudHRMS",
   "Mode": "Default",
@@ -2561,6 +2561,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\wwwroot\\images\\0268a27c-9e90-4cec-8e81-55a00e95a100_photo_2024-02-25_14-42-36.jpg",
+      "SourceId": "CloudHRMS",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\wwwroot\\",
+      "BasePath": "_content/CloudHRMS",
+      "RelativePath": "images/0268a27c-9e90-4cec-8e81-55a00e95a100_photo_2024-02-25_14-42-36.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\0268a27c-9e90-4cec-8e81-55a00e95a100_photo_2024-02-25_14-42-36.jpg"
     },
     {
       "Identity": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\wwwroot\\js\\site.js",

@@ -2,6 +2,7 @@
 using CloudHRMS.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using CloudHRMS.DAO;
+using Microsoft.AspNetCore.Hosting;
 
 
 namespace CloudHRMS.Controllers
@@ -9,10 +10,12 @@ namespace CloudHRMS.Controllers
     public class EmployeeController : Controller
     {
         private readonly ApplicationDbContext _applicationDbContext;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public EmployeeController(ApplicationDbContext applicationDbContext)
+        public EmployeeController(ApplicationDbContext applicationDbContext,IWebHostEnvironment webHostEnvironment)
         {
             this._applicationDbContext = applicationDbContext;
+            this._webHostEnvironment = webHostEnvironment;
         }
         public IActionResult Entry()
         {
@@ -30,7 +33,22 @@ namespace CloudHRMS.Controllers
             ViewBag.Positions = positions;
             return View();
         }
+        private string UploadedFile(EmployeeViewModel model)
+        {
+            string uniqueFileName = null;
 
+            if (model.ProfileImage != null)
+            {
+                string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images");
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + model.ProfileImage.FileName;
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    model.ProfileImage.CopyTo(fileStream);
+                }
+            }
+            return uniqueFileName;
+        }
         [HttpPost]
         public IActionResult Entry(EmployeeViewModel ui)//e001 
         {
@@ -49,6 +67,7 @@ namespace CloudHRMS.Controllers
                     return View();
                 }
                 //Data exchange from view model to data model
+                string uniqueFileName = UploadedFile(ui);
                 var employee = new EmployeeEntity()
                 {
                     Id = Guid.NewGuid().ToString(),
@@ -59,6 +78,7 @@ namespace CloudHRMS.Controllers
                     DOB = ui.DOB,
                     DOE = ui.DOE,
                     Address = ui.Address,
+                    ProfilePicture=uniqueFileName,
                     BasicSalary = ui.BasicSalary,
                     Gender = ui.Gender,
                     DepartmentId=ui.DepartmentId,
@@ -96,7 +116,8 @@ namespace CloudHRMS.Controllers
                 Code = e.Code,
                 DOE = e.DOE,
                 DepartmentInfo=d.Name,
-                PositionInfo=p.Name
+                PositionInfo=p.Name,
+                ProfilePicture=e.ProfilePicture??""
             }).ToList();
             return View(employees);
         }

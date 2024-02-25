@@ -293,6 +293,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\wwwroot\\images\\0268a27c-9e90-4cec-8e81-55a00e95a100_photo_2024-02-25_14-42-36.jpg",
+      "PackagePath": "staticwebassets\\images\\0268a27c-9e90-4cec-8e81-55a00e95a100_photo_2024-02-25_14-42-36.jpg"
+    },
+    {
       "Id": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

@@ -6,8 +6,12 @@
             @ViewBag.info
         </div>
     }
-    <form action="/employee/Entry" method="post">
-        <div class="mb-3">
+    <form action="/employee/Entry" method="post" enctype="multipart/form-data">
+<div class="mb-3">
+    <label for="Name" class="form-label">ProfileImage</label>
+    <input type="file" name="ProfileImage" class="form-control" required id="customFile">
+</div>
+<div class="mb-3">
             <label for="Code" class="form-label">Code</label>
             <input type="text" name="Code" class="form-control" placeholder="Enter Employee Code..." required>
         </div>
@@ -86,5 +90,13 @@
             <button class="btn btn-danger">Cancel</button>
         </div>
     </form>
-
 </div>
+@section scripts {
+    <script type="text/javascript">
+        // Add the following code if you want the name of the file appear on select
+        $(".custom-file-input").on("change", function () {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
+}

@@ -250,10 +250,10 @@ D:\EWADB3\EWADB3\EWADB3\CloudHRMS\obj\Debug\net6.0\staticwebassets.pack.json
 D:\EWADB3\EWADB3\EWADB3\CloudHRMS\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\EWADB3\EWADB3\EWADB3\CloudHRMS\obj\Debug\net6.0\scopedcss\bundle\CloudHRMS.styles.css
 D:\EWADB3\EWADB3\EWADB3\CloudHRMS\obj\Debug\net6.0\scopedcss\projectbundle\CloudHRMS.bundle.scp.css
-D:\EWADB3\EWADB3\EWADB3\CloudHRMS\obj\Debug\net6.0\CloudHRMS.csproj.CopyComplete
 D:\EWADB3\EWADB3\EWADB3\CloudHRMS\obj\Debug\net6.0\CloudHRMS.dll
 D:\EWADB3\EWADB3\EWADB3\CloudHRMS\obj\Debug\net6.0\refint\CloudHRMS.dll
 D:\EWADB3\EWADB3\EWADB3\CloudHRMS\obj\Debug\net6.0\CloudHRMS.pdb
 D:\EWADB3\EWADB3\EWADB3\CloudHRMS\obj\Debug\net6.0\CloudHRMS.genruntimeconfig.cache
 D:\EWADB3\EWADB3\EWADB3\CloudHRMS\obj\Debug\net6.0\ref\CloudHRMS.dll
 D:\EWADB3\EWADB3\EWADB3\CloudHRMS\obj\Debug\net6.0\scopedcss\Views\Shared\_LayoutAdmin.cshtml.rz.scp.css
+D:\EWADB3\EWADB3\EWADB3\CloudHRMS\obj\Debug\net6.0\CloudHRMS.csproj.Up2Date
