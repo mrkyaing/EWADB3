@@ -21,7 +21,10 @@
             <th scope="col">Phone</th>
             <th scope="col">Gender</th>
             <th scope="col">Address</th>
-            <th scope="col">Actions</th>
+            @if (User.IsInRole("HR"))
+            {
+                <th scope="col">Actions</th>
+            }
         </tr>
     </thead>
     <tbody>
@@ -46,12 +49,15 @@
                 <td>@item.Phone</td>
                 <td>@item.Gender</td>
                 <td>@item.Address</td>
-                <td>
-                    <div class="btn btn-group">
+                @if (User.IsInRole("HR"))
+                {
+                    <td>
+                        <div class="btn btn-group">
                         <a href="/employee/Edit?id=@item.Id" class="btn btn-primary" role="button">Edit</a>
                         <a asp-action="Delete" asp-controller="Employee" asp-route-id="@item.Id" onclick="return confirm('are you sure to delete this record?');" class="btn btn-danger" role="button"> Delete</a>
                     </div>
                 </td>
+                }
             </tr>
             index++;
         }

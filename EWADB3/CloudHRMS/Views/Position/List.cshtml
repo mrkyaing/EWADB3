@@ -13,7 +13,9 @@
             <th scope="col">Code</th>
             <th scope="col">Name</th>
             <th scope="col">Level</th>
-            <th scope="col">Actions</th>
+            @if(User.IsInRole("HR")){
+                <th scope="col">Actions</th>
+            }
         </tr>
     </Thead>
     @{
@@ -27,14 +29,17 @@
                 <td scope="col">@item.Code</td>
                 <td scope="col">@item.Name</td>
                 <td scope="col">@item.Level</td>
-                <td>
-                    <div class="btn-group">
+                @if (User.IsInRole("HR"))
+                {
+                    <td>
+                        <div class="btn-group">
                         <a class="btn btn-danger" asp-area="" asp-controller="Position" asp-action="Delete"
                            aria-current="page" asp-route-id="@item.Id">Delete</a>
                         <a class="btn btn-primary" asp-controller="Position" asp-action="Edit"
                            asp-route-id="@item.Id aria-current=" page">Edit</a>
                     </div>
                 </td>
+                }
             </tr>
             index++;
         }

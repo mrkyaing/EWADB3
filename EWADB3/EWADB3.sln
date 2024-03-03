@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkOut", "WorkOut\WorkOut.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AJAXWithJQuery", "AJAXWithJQuery\AJAXWithJQuery.csproj", "{0060AFA3-F1D2-4CFB-8213-39505D3FBAA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudHRMS", "CloudHRMS\CloudHRMS.csproj", "{34F38B52-F17F-43D4-A632-C1A91A83C086}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudHRMS", "CloudHRMS\CloudHRMS.csproj", "{34F38B52-F17F-43D4-A632-C1A91A83C086}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudHRMS.ReportUIHelper", "CloudHRMS.ReportUIHelper\CloudHRMS.ReportUIHelper.csproj", "{C676FA33-4F9F-4BBD-B36D-B217F39A0819}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudHRMS.ReportHelper", "CloudHRMS.ReportHelper\CloudHRMS.ReportHelper.csproj", "{0F704F73-3054-4846-A1D7-BE137DC9CC3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{34F38B52-F17F-43D4-A632-C1A91A83C086}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34F38B52-F17F-43D4-A632-C1A91A83C086}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34F38B52-F17F-43D4-A632-C1A91A83C086}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C676FA33-4F9F-4BBD-B36D-B217F39A0819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C676FA33-4F9F-4BBD-B36D-B217F39A0819}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C676FA33-4F9F-4BBD-B36D-B217F39A0819}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C676FA33-4F9F-4BBD-B36D-B217F39A0819}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F704F73-3054-4846-A1D7-BE137DC9CC3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F704F73-3054-4846-A1D7-BE137DC9CC3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F704F73-3054-4846-A1D7-BE137DC9CC3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F704F73-3054-4846-A1D7-BE137DC9CC3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -252,10 +252,16 @@
         <!-- /.container-fluid -->
     </div>
 }
+else if (User.IsInRole("EMPLOYEE"))
+{
+    <div class="text-center">
+        <h1 class="display-4">Welcome Cloud HRMS  You are employee </h1>
+        <p>Hello,@User.Identity.Name</p>
+    </div>
+}
 else
 {
     <div class="text-center">
-        <h1 class="display-4">Welcome Cloud HRMS  You are employee</h1>
+        <h1 class="display-4">Welcome Cloud HRMS </h1>
     </div>
-
 }

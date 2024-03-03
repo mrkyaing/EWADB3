@@ -257,3 +257,4 @@ D:\EWADB3\EWADB3\EWADB3\CloudHRMS\obj\Debug\net6.0\CloudHRMS.genruntimeconfig.ca
 D:\EWADB3\EWADB3\EWADB3\CloudHRMS\obj\Debug\net6.0\ref\CloudHRMS.dll
 D:\EWADB3\EWADB3\EWADB3\CloudHRMS\obj\Debug\net6.0\scopedcss\Views\Shared\_LayoutAdmin.cshtml.rz.scp.css
 D:\EWADB3\EWADB3\EWADB3\CloudHRMS\obj\Debug\net6.0\CloudHRMS.csproj.Up2Date
+D:\EWADB3\EWADB3\EWADB3\CloudHRMS\obj\Debug\net6.0\scopedcss\Views\Shared\_LayoutEmployee.cshtml.rz.scp.css
