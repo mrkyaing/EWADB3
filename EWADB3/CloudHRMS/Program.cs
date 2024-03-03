@@ -16,6 +16,12 @@ builder.Services.AddDbContext<ApplicationDbContext>(o => o.UseSqlServer(connecti
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultUI().AddDefaultTokenProviders();
 builder.Services.AddScoped<IPositionRepository,PositionRepository>();
 builder.Services.AddScoped<IPositionService,PositionService>();
+
+builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+builder.Services.AddScoped<IDepartmentService, DepartmentService>();
+
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

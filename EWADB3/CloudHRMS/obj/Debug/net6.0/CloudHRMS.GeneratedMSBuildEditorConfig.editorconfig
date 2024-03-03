@@ -86,6 +86,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/EWADB3/EWADB3/EWADB3/CloudHRMS/Views/EmployeeReport/ReportByEmployeeFromCode.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVSZXBvcnRcUmVwb3J0QnlFbXBsb3llZUZyb21Db2RlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/EWADB3/EWADB3/EWADB3/CloudHRMS/Views/Employee/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
