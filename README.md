@@ -23,3 +23,7 @@ Enterprise Web Application Development with ASP.NET CORE MVC
 - Unit Test with xUnit
 - Version Control with Git
 - Azure Cloud & DevOps (Introduction to)
+
+- Diaram url https://app.diagrams.net/#G1pXXKGOjnNp5_W0lBNHUd2L762emvephn#%7B%22pageId%22%3A%22tfe6gbIX7Au97X5J7mWQ%22%7D
+![app-archi-diagram drawio (1)](https://github.com/mrkyaing/EWADB3/assets/9696016/18fade31-622c-4fc8-9337-00ba3067204a)
+
