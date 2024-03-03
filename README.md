@@ -25,4 +25,5 @@ Enterprise Web Application Development with ASP.NET CORE MVC
 - Azure Cloud & DevOps (Introduction to)
 
 - Diaram url https://app.diagrams.net/#G1pXXKGOjnNp5_W0lBNHUd2L762emvephn#%7B%22pageId%22%3A%22tfe6gbIX7Au97X5J7mWQ%22%7D
-  ![image](https://github.com/mrkyaing/EWADB3/assets/9696016/b6566a44-8d91-4427-abcd-42950a82a5aa)
+![app-archi-diagram drawio (1)](https://github.com/mrkyaing/EWADB3/assets/9696016/18fade31-622c-4fc8-9337-00ba3067204a)
+
