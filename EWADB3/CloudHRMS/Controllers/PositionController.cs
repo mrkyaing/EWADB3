@@ -19,14 +19,27 @@ namespace CloudHRMS.Controllers
         public IActionResult Edit(string id)
         {
             if (id != null)
-            {
-                
+            {             
                 return View(_positionService.GetById(id));
             }
             else
             {
                 return RedirectToAction("List");
             }
+        }
+        [HttpPost]
+        public IActionResult Update(PositionViewModel ui)
+        {
+            try
+            {
+                _positionService.Update(ui);
+                ViewBag.Info = "successfully Update a record to the system";
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Info = "Error occur when  updating a record  to the system";
+            }
+            return RedirectToAction("List");
         }
         public IActionResult Delete(string id)
         {

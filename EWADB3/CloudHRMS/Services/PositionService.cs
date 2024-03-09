@@ -1,6 +1,7 @@
 ﻿using CloudHRMS.Models.DataModels;
 using CloudHRMS.Models.ViewModels;
 using CloudHRMS.Repostories;
+using CloudHRMS.Utilities;
 
 namespace CloudHRMS.Services
 {
@@ -27,7 +28,8 @@ namespace CloudHRMS.Services
                     Id = Guid.NewGuid().ToString(),
                     Code = positionViewModel.Code,
                     Name = positionViewModel.Name,
-                    Level = positionViewModel.Level
+                    Level = positionViewModel.Level,
+                    CreatedAt=TimeHelper.GetNow()
                 };
                 _positionRepository.Create(position);
             }
@@ -60,7 +62,9 @@ namespace CloudHRMS.Services
             {
                 Id = positonEntity.Id,
                 Code = positonEntity.Code,
+                Name=positonEntity.Name,
                 Level = positonEntity.Level,
+                CreatedAt=positonEntity.CreatedAt
             };
         }
 
@@ -70,8 +74,10 @@ namespace CloudHRMS.Services
             {
                 Id=positionViewModel.Id,
                 Code=positionViewModel.Code,
+                Name=positionViewModel.Name,
                 Level=positionViewModel.Level,
-                ModifiedAt=DateTime.Now
+                ModifiedAt=DateTime.Now,
+                CreatedAt = positionViewModel.CreatedAt
             };
             _positionRepository.Update(position);
         }

@@ -5,7 +5,7 @@ namespace CloudHRMS.Services
 {
     public interface IEmployeeService
     {
-        void Create(EmployeeViewModel viewModel);
+        Task Create(EmployeeViewModel viewModel);
         IList<EmployeeViewModel> GetAll();
         EmployeeViewModel GetById(string id);
         void Update(EmployeeViewModel viewModel);

@@ -7,7 +7,9 @@
             @ViewBag.Info
         </div>
     }
-    <form action="/position/Edit" method="post">
+    <form action="/position/Update" method="post">
+        <input type="hidden" name="Id" value="@Model.Id"/>
+        <input type="hidden" name="CreatedAt" value="@Model.CreatedAt" />
         <div class="mb-3">
             <label for="Code" class="form-label">Code</label>
             <input type="text" name="Code" class="form-control" value="@Model.Code" required>
@@ -20,7 +22,6 @@
             <label for="Level" class="form-label">Level</label>
             <input type="text" name="Level" class="form-control" value="@Model.Level" required>
         </div>
-
         <div class="mb-3">
             <button class="btn btn-primary" type="submit">Update</button>
             <button class="btn btn-danger">Cancel</button>

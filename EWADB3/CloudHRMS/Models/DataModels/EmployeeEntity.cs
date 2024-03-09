@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CloudHRMS.Models.DataModels
@@ -25,5 +26,8 @@ namespace CloudHRMS.Models.DataModels
         [ForeignKey("PositionId")]
         public string PositionId { get; set; }
         public virtual PositionEntity Position { get; set; }
+        [ForeignKey("UserId")]
+        public string UserId { get; set; }
+        public virtual IdentityUser  IdentityUser { get; set; }
     }
 }

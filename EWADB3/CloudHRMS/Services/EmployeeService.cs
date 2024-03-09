@@ -2,6 +2,8 @@
 using CloudHRMS.Models.ViewModels;
 using CloudHRMS.ReportHelper;
 using CloudHRMS.Repostories;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
 
 namespace CloudHRMS.Services
 {
@@ -10,14 +12,15 @@ namespace CloudHRMS.Services
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IPositionRepository _positionRepository;
         private readonly IDepartmentRepository _departmentRepository;
-
-        public EmployeeService(IEmployeeRepository employeeRepository,IPositionRepository positionRepository,IDepartmentRepository departmentRepository)
+        private readonly UserManager<IdentityUser> _userManager;
+        public EmployeeService(UserManager<IdentityUser> userManager, IEmployeeRepository employeeRepository,IPositionRepository positionRepository,IDepartmentRepository departmentRepository)
         {
+            _userManager = userManager;
             this._employeeRepository = employeeRepository;
             this._positionRepository = positionRepository;
             this._departmentRepository = departmentRepository;
         }
-        public void Create(EmployeeViewModel ui)
+        public async Task Create(EmployeeViewModel ui)
         {
             try
             {
@@ -42,15 +45,25 @@ namespace CloudHRMS.Services
                     ModifiedAt = DateTime.Now,
                     DepartmentId = ui.DepartmentId,
                     PositionId = ui.PositionId
-                };
-                _employeeRepository.Create(employee);
-            }
+                }; try
+                {
+                    _employeeRepository.Create(employee);
+                    var user = new IdentityUser { UserName = ui.Email, Email = ui.Email };
+                    var result = await _userManager.CreateAsync(user, "CloudHRMS@prodev@123");
+                    if (result.Succeeded)
+                    {
+                        await _userManager.AddToRoleAsync(user, "EMPLOYEE");
+                    }
+                }catch (Exception ex)
+                {
+                    throw;
+                }
+                }       
             catch (Exception)
             {
                 throw;
             }
         }
-
         public void Delete(string id)
         {
             _employeeRepository.Delete(id);
@@ -80,7 +93,6 @@ namespace CloudHRMS.Services
                                                       ProfilePicture = e.ProfilePicture ?? ""
                                                   }).ToList();
         }
-
         public IList<EmployeeDetail> GetByFromCodeToCodeDepartentId(string fromCode, string toCode, string DeprtmentId)
         {
             return (from e in _employeeRepository.GetAll()
@@ -105,7 +117,6 @@ namespace CloudHRMS.Services
                         ProfilePicture = e.ProfilePicture ?? ""
                     }).ToList();
         }
-
         public EmployeeViewModel GetById(string id)
         {
             var e = _employeeRepository.GetById(id);
@@ -128,7 +139,6 @@ namespace CloudHRMS.Services
                ProfilePicture = e.ProfilePicture ?? ""
            };
         }
-
         public void Update(EmployeeViewModel ui)
         {
             //Data exchange from view model to data model

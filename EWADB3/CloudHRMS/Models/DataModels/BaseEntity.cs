@@ -7,7 +7,7 @@ namespace CloudHRMS.Models.DataModels
         [Key]
         [MaxLength(36)]
         public string Id { get; set; }
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime CreatedAt { get; set; } 
         public DateTime? ModifiedAt { get; set; }
         public string IpAddress { get; set;}=NetworkHelper.GetLocalIPAddress(); 
     }
