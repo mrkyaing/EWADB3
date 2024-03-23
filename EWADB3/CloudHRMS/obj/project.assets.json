@@ -11687,8 +11687,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS.ReportHelper\\CloudHRMS.ReportHelper.csproj": {
-              "projectPath": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS.ReportHelper\\CloudHRMS.ReportHelper.csproj"
+            "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS.ReportHelper\\CloudHRMS.ReportHelper.csproj": {
+              "projectPath": "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS.ReportHelper\\CloudHRMS.ReportHelper.csproj"
             }
           }
         }
