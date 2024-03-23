@@ -9,18 +9,18 @@ namespace CloudHRMS.Services
 {
     public class EmployeeService : IEmployeeService
     {
+        private readonly IUserService _userService;
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IPositionRepository _positionRepository;
         private readonly IDepartmentRepository _departmentRepository;
-        private readonly UserManager<IdentityUser> _userManager;
-        public EmployeeService(UserManager<IdentityUser> userManager, IEmployeeRepository employeeRepository,IPositionRepository positionRepository,IDepartmentRepository departmentRepository)
+        public EmployeeService(IUserService userService, IEmployeeRepository employeeRepository,IPositionRepository positionRepository,IDepartmentRepository departmentRepository)
         {
-            _userManager = userManager;
+            this._userService = userService;
             this._employeeRepository = employeeRepository;
             this._positionRepository = positionRepository;
             this._departmentRepository = departmentRepository;
         }
-        public async Task Create(EmployeeViewModel ui)
+        public async Task CreateAsync(EmployeeViewModel ui,string profileUrl)
         {
             try
             {
@@ -29,36 +29,37 @@ namespace CloudHRMS.Services
                 {
                     throw new Exception("Code already exists in the system.");
                 }
-                //Data exchange from view model to data model
-                var employee = new EmployeeEntity()
+                try
                 {
-                    Id = ui.Id,//update the recrod with  the existing id 
-                    Code = ui.Code,
-                    Name = ui.Name,
-                    Email = ui.Email,
-                    Phone = ui.Phone,
-                    DOB = ui.DOB,
-                    DOE = ui.DOE,
-                    Address = ui.Address,
-                    BasicSalary = ui.BasicSalary,
-                    Gender = ui.Gender,
-                    ModifiedAt = DateTime.Now,
-                    DepartmentId = ui.DepartmentId,
-                    PositionId = ui.PositionId
-                }; try
-                {
-                    _employeeRepository.Create(employee);
-                    var user = new IdentityUser { UserName = ui.Email, Email = ui.Email };
-                    var result = await _userManager.CreateAsync(user, "CloudHRMS@prodev@123");
-                    if (result.Succeeded)
+                 string userId=await _userService.CreateAsync(ui.Email);
+
+                    //Data exchange from view model to data model
+                    var employee = new EmployeeEntity()
                     {
-                        await _userManager.AddToRoleAsync(user, "EMPLOYEE");
-                    }
-                }catch (Exception ex)
+                        Id = ui.Id,//update the recrod with  the existing id 
+                        Code = ui.Code,
+                        Name = ui.Name,
+                        Email = ui.Email,
+                        Phone = ui.Phone,
+                        DOB = ui.DOB,
+                        DOE = ui.DOE,
+                        Address = ui.Address,
+                        BasicSalary = ui.BasicSalary,
+                        Gender = ui.Gender,
+                        ModifiedAt = DateTime.Now,
+                        ProfilePicture = profileUrl,
+                        DepartmentId = ui.DepartmentId,
+                        PositionId = ui.PositionId,
+                        UserId= userId
+                    };
+                    _employeeRepository.Create(employee);
+                }
+                catch (Exception ex)
                 {
                     throw;
                 }
-                }       
+                
+            }       
             catch (Exception)
             {
                 throw;
@@ -71,27 +72,36 @@ namespace CloudHRMS.Services
 
         public IList<EmployeeViewModel> GetAll()
         {
-           return (from e in _employeeRepository.GetAll()
-                                                  join d in _departmentRepository.GetAll()
-                                                  on e.DepartmentId equals d.Id
-                                                  join p in _positionRepository.GetAll()
-                                                  on e.PositionId equals p.Id
-                                                  select new EmployeeViewModel
-                                                  {
-                                                      Id = e.Id,
-                                                      Name = e.Name,
-                                                      Email = e.Email,
-                                                      DOB = e.DOB,
-                                                      BasicSalary = e.BasicSalary,
-                                                      Address = e.Address,
-                                                      Gender = e.Gender,
-                                                      Phone = e.Phone,
-                                                      Code = e.Code,
-                                                      DOE = e.DOE,
-                                                      DepartmentInfo = d.Name,
-                                                      PositionInfo = p.Name,
-                                                      ProfilePicture = e.ProfilePicture ?? ""
-                                                  }).ToList();
+            try
+            {
+                var employees = (from e in _employeeRepository.GetAll()
+                                 join d in _departmentRepository.GetAll()
+                                 on e.DepartmentId equals d.Id
+                                 join p in _positionRepository.GetAll()
+                                 on e.PositionId equals p.Id
+                                 select new EmployeeViewModel
+                                 {
+                                     Id = e.Id,
+                                     Name = e.Name,
+                                     Email = e.Email,
+                                     DOB = e.DOB,
+                                     BasicSalary = e.BasicSalary,
+                                     Address = e.Address,
+                                     Gender = e.Gender,
+                                     Phone = e.Phone,
+                                     Code = e.Code,
+                                     DOE = e.DOE,
+                                     DepartmentInfo = d.Name,
+                                     PositionInfo = p.Name,
+                                     ProfilePicture = e.ProfilePicture ?? ""
+                                 }).ToList();
+                return employees;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
         public IList<EmployeeDetail> GetByFromCodeToCodeDepartentId(string fromCode, string toCode, string DeprtmentId)
         {

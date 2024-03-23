@@ -1,14 +1,14 @@
 {
   "format": 1,
   "restore": {
-    "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\CloudHRMS.csproj": {}
+    "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\CloudHRMS.csproj": {}
   },
   "projects": {
-    "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS.ReportHelper\\CloudHRMS.ReportHelper.csproj": {
+    "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS.ReportHelper\\CloudHRMS.ReportHelper.csproj": {
       "restore": {
-        "projectUniqueName": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS.ReportHelper\\CloudHRMS.ReportHelper.csproj",
+        "projectUniqueName": "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS.ReportHelper\\CloudHRMS.ReportHelper.csproj",
         "projectName": "CloudHRMS.ReportHelper",
-        "projectPath": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS.ReportHelper\\CloudHRMS.ReportHelper.csproj",
+        "projectPath": "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS.ReportHelper\\CloudHRMS.ReportHelper.csproj",
         "frameworks": {
           "net48": {
             "projectReferences": {}
@@ -19,14 +19,14 @@
         "net48": {}
       }
     },
-    "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\CloudHRMS.csproj": {
+    "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\CloudHRMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\CloudHRMS.csproj",
+        "projectUniqueName": "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\CloudHRMS.csproj",
         "projectName": "CloudHRMS",
-        "projectPath": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\CloudHRMS.csproj",
+        "projectPath": "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\CloudHRMS.csproj",
         "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\obj\\",
+        "outputPath": "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,8 +43,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS.ReportHelper\\CloudHRMS.ReportHelper.csproj": {
-                "projectPath": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS.ReportHelper\\CloudHRMS.ReportHelper.csproj"
+              "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS.ReportHelper\\CloudHRMS.ReportHelper.csproj": {
+                "projectPath": "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS.ReportHelper\\CloudHRMS.ReportHelper.csproj"
               }
             }
           }
@@ -64,6 +64,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNet.Identity.Core": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.26, )"

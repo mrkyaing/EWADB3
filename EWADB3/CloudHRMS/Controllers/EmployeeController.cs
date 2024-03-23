@@ -3,19 +3,21 @@ using CloudHRMS.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using CloudHRMS.DAO;
 using Microsoft.AspNetCore.Hosting;
+using CloudHRMS.Services;
 
 
 namespace CloudHRMS.Controllers
 {
     public class EmployeeController : Controller
     {
-        private readonly ApplicationDbContext _applicationDbContext;
+        private readonly IEmployeeService _employeeService;
         private readonly IWebHostEnvironment _webHostEnvironment;
-
-        public EmployeeController(ApplicationDbContext applicationDbContext,IWebHostEnvironment webHostEnvironment)
+        private readonly ApplicationDbContext _applicationDbContext;
+        public EmployeeController(IEmployeeService employeeService, ApplicationDbContext applicationDbContext, IWebHostEnvironment webHostEnvironment)
         {
-            this._applicationDbContext = applicationDbContext;
+            this._employeeService = employeeService;
             this._webHostEnvironment = webHostEnvironment;
+            _applicationDbContext = applicationDbContext;
         }
         public IActionResult Entry()
         {
@@ -54,13 +56,13 @@ namespace CloudHRMS.Controllers
         {
             try
             {
-                var IsValidCode = _applicationDbContext.Employees.Where(w => w.Code == ui.Code).Any();
+                var IsValidCode = _employeeService.GetAll().Where(w => w.Code == ui.Code).Any();
                 if (IsValidCode)
                 {
                     ViewBag.info = "Code is duplicate in system.";
                     return View();
                 }
-                var IsValidEmail = _applicationDbContext.Employees.Where(w => w.Email == ui.Email).Any();
+                var IsValidEmail = _employeeService.GetAll().Where(w => w.Email == ui.Email).Any();
                 if (IsValidEmail)
                 {
                     ViewBag.info = "Email is duplicate in system.";
@@ -68,24 +70,7 @@ namespace CloudHRMS.Controllers
                 }
                 //Data exchange from view model to data model
                 string uniqueFileName = UploadedFile(ui);
-                var employee = new EmployeeEntity()
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    Code = ui.Code,
-                    Name = ui.Name,
-                    Email = ui.Email,
-                    Phone = ui.Phone,
-                    DOB = ui.DOB,
-                    DOE = ui.DOE,
-                    Address = ui.Address,
-                    ProfilePicture=uniqueFileName,
-                    BasicSalary = ui.BasicSalary,
-                    Gender = ui.Gender,
-                    DepartmentId=ui.DepartmentId,
-                    PositionId=ui.PositionId
-                };
-                _applicationDbContext.Employees.Add(employee);
-                _applicationDbContext.SaveChanges();
+                _employeeService.CreateAsync(ui,uniqueFileName);
                 TempData["info"] = "Save process is completed successfully.";
             }
             catch (Exception ex)
@@ -119,7 +104,7 @@ namespace CloudHRMS.Controllers
                 PositionInfo=p.Name,
                 ProfilePicture=e.ProfilePicture??""
             }).ToList();
-            return View(employees);
+            return View(_employeeService.GetAll());
         }
         public IActionResult Delete(string id)
         {

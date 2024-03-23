@@ -634,6 +634,19 @@
       "MessagePackAnalyzer/2.1.152": {
         "type": "package"
       },
+      "Microsoft.AspNet.Identity.Core/2.2.4": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/6.0.26": {
         "type": "package",
         "compile": {
@@ -4856,6 +4869,19 @@
         "messagepackanalyzer.nuspec",
         "tools/install.ps1",
         "tools/uninstall.ps1"
+      ]
+    },
+    "Microsoft.AspNet.Identity.Core/2.2.4": {
+      "sha512": "s3u/o3iG5h0z7Ggukwo4soPwogD56ZrYbolGxTfw41zkuG6jAXUJT/V3EThqHJXGuCNvWSdSnnwAhPfT9Sn36g==",
+      "type": "package",
+      "path": "microsoft.aspnet.identity.core/2.2.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Microsoft.AspNet.Identity.Core.dll",
+        "lib/net45/Microsoft.AspNet.Identity.Core.xml",
+        "microsoft.aspnet.identity.core.2.2.4.nupkg.sha512",
+        "microsoft.aspnet.identity.core.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/6.0.26": {
@@ -11587,6 +11613,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "CloudHRMS.ReportHelper >= 1.0.0",
+      "Microsoft.AspNet.Identity.Core >= 2.2.4",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.26",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.26",
       "Microsoft.EntityFrameworkCore >= 6.0.26",
@@ -11607,11 +11634,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\CloudHRMS.csproj",
+      "projectUniqueName": "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\CloudHRMS.csproj",
       "projectName": "CloudHRMS",
-      "projectPath": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\CloudHRMS.csproj",
+      "projectPath": "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\CloudHRMS.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\obj\\",
+      "outputPath": "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -11628,8 +11655,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS.ReportHelper\\CloudHRMS.ReportHelper.csproj": {
-              "projectPath": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS.ReportHelper\\CloudHRMS.ReportHelper.csproj"
+            "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS.ReportHelper\\CloudHRMS.ReportHelper.csproj": {
+              "projectPath": "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS.ReportHelper\\CloudHRMS.ReportHelper.csproj"
             }
           }
         }
@@ -11649,6 +11676,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Microsoft.AspNet.Identity.Core": {
+            "target": "Package",
+            "version": "[2.2.4, )"
+          },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
             "version": "[6.0.26, )"
@@ -11724,5 +11755,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.Identity.Core 2.2.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.Identity.Core",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
