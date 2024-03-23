@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "AutoMapper/13.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Humanizer/2.14.1": {
         "type": "package",
         "dependencies": {
@@ -4079,6 +4095,21 @@
     }
   },
   "libraries": {
+    "AutoMapper/13.0.1": {
+      "sha512": "/Fx1SbJ16qS7dU4i604Sle+U9VLX+WSNVJggk6MupKVkYvvBm4XqYaeFuf67diHefHKHs50uQIS2YEDFhPCakQ==",
+      "type": "package",
+      "path": "automapper/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.13.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/net6.0/AutoMapper.dll",
+        "lib/net6.0/AutoMapper.xml"
+      ]
+    },
     "Humanizer/2.14.1": {
       "sha512": "/FUTD3cEceAAmJSCPN9+J+VhGwmL/C12jvwlyM1DFXShEMsBzvLzLqSrJ2rb+k/W2znKw7JyflZgZpyE+tI7lA==",
       "type": "package",
@@ -11612,6 +11643,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "AutoMapper >= 13.0.1",
       "CloudHRMS.ReportHelper >= 1.0.0",
       "Microsoft.AspNet.Identity.Core >= 2.2.4",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.26",
@@ -11634,11 +11666,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\CloudHRMS.csproj",
+      "projectUniqueName": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\CloudHRMS.csproj",
       "projectName": "CloudHRMS",
-      "projectPath": "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\CloudHRMS.csproj",
+      "projectPath": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\CloudHRMS.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\obj\\",
+      "outputPath": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -11655,8 +11687,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS.ReportHelper\\CloudHRMS.ReportHelper.csproj": {
-              "projectPath": "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS.ReportHelper\\CloudHRMS.ReportHelper.csproj"
+            "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS.ReportHelper\\CloudHRMS.ReportHelper.csproj": {
+              "projectPath": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS.ReportHelper\\CloudHRMS.ReportHelper.csproj"
             }
           }
         }
@@ -11676,6 +11708,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[13.0.1, )"
+          },
           "Microsoft.AspNet.Identity.Core": {
             "target": "Package",
             "version": "[2.2.4, )"

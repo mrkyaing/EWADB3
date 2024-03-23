@@ -74,6 +74,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/EWADB3/EWADB3/EWADB3/CloudHRMS/Views/AttendancePolicy/Entry.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZW5kYW5jZVBvbGljeVxFbnRyeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/EWADB3/EWADB3/EWADB3/CloudHRMS/Views/AttendancePolicy/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZW5kYW5jZVBvbGljeVxMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/EWADB3/EWADB3/EWADB3/CloudHRMS/Views/DailyAttendance/Entry.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlBdHRlbmRhbmNlXEVudHJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/EWADB3/EWADB3/EWADB3/CloudHRMS/Views/DailyAttendance/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlBdHRlbmRhbmNlXExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/EWADB3/EWADB3/EWADB3/CloudHRMS/Views/Department/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -132,6 +148,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/EWADB3/EWADB3/EWADB3/CloudHRMS/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/EWADB3/EWADB3/EWADB3/CloudHRMS/Views/ShiftAssign/Entry.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpZnRBc3NpZ25cRW50cnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/EWADB3/EWADB3/EWADB3/CloudHRMS/Views/ShiftAssign/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpZnRBc3NpZ25cTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/EWADB3/EWADB3/EWADB3/CloudHRMS/Views/Shift/Entry.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpZnRcRW50cnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/EWADB3/EWADB3/EWADB3/CloudHRMS/Views/Shift/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpZnRcTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/EWADB3/EWADB3/EWADB3/CloudHRMS/Views/_ViewImports.cshtml]

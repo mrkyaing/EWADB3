@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "L8xbLJsbfEpxPCYbNrqN12NU58DmrEAbbn4FyuN0H8FTOz/2IZ6hdIBKZyQZtx8hy30S5svfIzpu4r254y71iQ==",
+  "dgSpecHash": "Ze9klNqDaZK3wvBGgBv3GprdSdYMg3gMoOAxGIXtJu7rlH2tZsm9RZ1qijU/BsPmpR+4vjrsRhVQjBVhg6ti+Q==",
   "success": true,
-  "projectFilePath": "d:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\CloudHRMS.csproj",
+  "projectFilePath": "D:\\EWADB3\\EWADB3\\EWADB3\\CloudHRMS\\CloudHRMS.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\PC\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

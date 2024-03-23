@@ -288,3 +288,4 @@ D:\EWADB3\EWADB3\EWADB3\CloudHRMS\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Vis
 D:\EWADB3\EWADB3\EWADB3\CloudHRMS\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.resources.dll
 D:\EWADB3\EWADB3\EWADB3\CloudHRMS\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.resources.dll
 d:\EWADB3\EWADB3\EWADB3\CloudHRMS\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
+D:\EWADB3\EWADB3\EWADB3\CloudHRMS\bin\Debug\net6.0\AutoMapper.dll

@@ -1,3 +1,4 @@
+using AutoMapper;
 using CloudHRMS.DAO;
 using CloudHRMS.Repostories;
 using CloudHRMS.Services;
@@ -23,6 +24,7 @@ builder.Services.AddScoped<IDepartmentService, DepartmentService>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddAutoMapper(typeof(Program));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
