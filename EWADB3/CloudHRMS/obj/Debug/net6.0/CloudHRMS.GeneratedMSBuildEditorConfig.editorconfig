@@ -74,6 +74,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/EWADB3/EWADB3/EWADB3/CloudHRMS/Views/AttendanceMaster/DayEndProcess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZW5kYW5jZU1hc3RlclxEYXlFbmRQcm9jZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/EWADB3/EWADB3/EWADB3/CloudHRMS/Views/AttendanceMaster/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZW5kYW5jZU1hc3RlclxMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/EWADB3/EWADB3/EWADB3/CloudHRMS/Views/AttendancePolicy/Entry.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZW5kYW5jZVBvbGljeVxFbnRyeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

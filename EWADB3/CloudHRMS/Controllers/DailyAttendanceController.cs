@@ -27,7 +27,7 @@ namespace CloudHRMS.Controllers
                             OutTime = d.OutTime,
                             EmployeeId =e.Code +" "+e.Name,
                             DepartmentId =dept.Code +" " +dept.Name,
-                        }).ToList();
+                        }).OrderBy(o=>o.AttendanceDate).ToList();
             return View(dailyAttendances);
         }
 

@@ -12,6 +12,8 @@ namespace CloudHRMS.Utilities
             CreateMap<ShiftEntity, ShiftViewModel>().ReverseMap();
             CreateMap<ShiftAssignEntity, ShiftAssignViewModel>().ReverseMap();
             CreateMap<EmployeeEntity, EmployeeViewModel>().ReverseMap();
+            CreateMap<AttendanceMasterEntity, AttendanceMasterViewModel>().ReverseMap(); 
+            CreateMap<DepartmentEntity, DepartmentViewModel>().ReverseMap();
         }
     }
 }
