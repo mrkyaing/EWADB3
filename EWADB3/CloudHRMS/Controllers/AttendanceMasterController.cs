@@ -34,8 +34,7 @@ namespace CloudHRMS.Controllers
             try
             {
                 //Data exchange from view model to data model by using automapper 
-                List<AttendanceMasterEntity> attendanceMasters = new List<AttendanceMasterEntity>();
-           
+                List<AttendanceMasterEntity> attendanceMasters = new List<AttendanceMasterEntity>();         
                 var DailyAttendancesWithShiftAssignsData = (from d in _applicationDbContext.DailyAttendances
                             join sa in _applicationDbContext.ShiftAssigns
                             on d.EmployeeId equals sa.EmployeeId
@@ -45,8 +44,7 @@ namespace CloudHRMS.Controllers
                             {
                                 dailyAttendance=d,
                                 shiftAssign=sa
-                            }).ToList();
-                //List<ShiftAssignEntity> shiftAssigns = _applicationDbContext.ShiftAssigns.Where(w => w.EmployeeId == ui.EmployeeId && (ui.AttendanceDate >= w.FromDate && ui.ToDate <= w.ToDate)).ToList();
+                            }).ToList();             
                 foreach(var data in DailyAttendancesWithShiftAssignsData)
                 {
                     ShiftEntity definedShift = _applicationDbContext.Shifts.Where(s => s.Id == data.shiftAssign.ShiftId).SingleOrDefault() ;
@@ -80,10 +78,9 @@ namespace CloudHRMS.Controllers
                         {
                             attendanceMaster.IsEarlyOut = false;
                         }
-
                         attendanceMasters.Add(attendanceMaster);
                     }//end of the deifned shift not null 
-                  
+                
                 }
                 _applicationDbContext.AttendanceMasters.AddRange(attendanceMasters);
                 _applicationDbContext.SaveChanges();

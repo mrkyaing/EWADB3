@@ -14,6 +14,7 @@ namespace CloudHRMS.Utilities
             CreateMap<EmployeeEntity, EmployeeViewModel>().ReverseMap();
             CreateMap<AttendanceMasterEntity, AttendanceMasterViewModel>().ReverseMap(); 
             CreateMap<DepartmentEntity, DepartmentViewModel>().ReverseMap();
+            CreateMap<PayrollEntity, PayrollViewModel>().ReverseMap();
         }
     }
 }
