@@ -185,7 +185,7 @@ namespace CloudHRMS.Controllers
                     Address = ui.Address,
                     BasicSalary = ui.BasicSalary,
                     Gender = ui.Gender,
-                    ModifiedAt = DateTime.Now,
+                    ModifiedAt = DateTime.Now,//for update audit purpose 
                     DepartmentId = ui.DepartmentId,
                     PositionId = ui.PositionId
                 };

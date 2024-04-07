@@ -67,21 +67,22 @@
             <label for="BasicSalary" class="form-label">Basic Salary</label>
             <input type="text" name="BasicSalary" class="form-control" value="@Model.BasicSalary">
         </div>
+
         <div class="mb-3">
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="Gender" value="Male"  @(Model.Gender=="m"?"Checked":"")>
+                <input class="form-check-input" type="radio" name="Gender" value="m"  @(Model.Gender=="m"?"Checked":"")>
                 <label class="form-check-label" for="Male">
                     Male
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="Gender" value="Female" @(Model.Gender == "f" ? "Checked" : "")>
+                <input class="form-check-input" type="radio" name="Gender" value="f" @(Model.Gender == "f" ? "Checked" : "")>
                 <label class="form-check-label" for="Female">
                     Female
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="Gender" value="Other">
+                <input class="form-check-input" type="radio" name="Gender" value="o">
                 <label class="form-check-label" for="Female" @(Model.Gender == "o" ? "Checked" : "")>
                     Other
                 </label>
@@ -97,7 +98,7 @@
         </div>
         <div class="mb-3">
             <button class="btn btn-primary" type="submit">Update</button>
-            <button class="btn btn-danger">Cancel</button>
+            <button class="btn btn-danger" type="reset">Cancel</button>
         </div>
     </form>
 </div>

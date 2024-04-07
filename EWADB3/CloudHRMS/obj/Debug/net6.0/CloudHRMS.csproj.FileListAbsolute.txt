@@ -580,3 +580,9 @@ C:\EWADB3\EWADB3\CloudHRMS\obj\Debug\net6.0\refint\CloudHRMS.dll
 C:\EWADB3\EWADB3\CloudHRMS\obj\Debug\net6.0\CloudHRMS.pdb
 C:\EWADB3\EWADB3\CloudHRMS\obj\Debug\net6.0\CloudHRMS.genruntimeconfig.cache
 C:\EWADB3\EWADB3\CloudHRMS\obj\Debug\net6.0\ref\CloudHRMS.dll
+C:\EWADB3\EWADB3\CloudHRMS\bin\Debug\net6.0\EPPlus.dll
+C:\EWADB3\EWADB3\CloudHRMS\bin\Debug\net6.0\EPPlus.Interfaces.dll
+C:\EWADB3\EWADB3\CloudHRMS\bin\Debug\net6.0\EPPlus.System.Drawing.dll
+C:\EWADB3\EWADB3\CloudHRMS\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\EWADB3\EWADB3\CloudHRMS\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\EWADB3\EWADB3\CloudHRMS\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll

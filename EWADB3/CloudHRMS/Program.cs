@@ -1,5 +1,6 @@
 using AutoMapper;
 using CloudHRMS.DAO;
+using CloudHRMS.Reports;
 using CloudHRMS.Repostories;
 using CloudHRMS.Services;
 using Microsoft.AspNetCore.Identity;
@@ -24,6 +25,8 @@ builder.Services.AddScoped<IDepartmentService, DepartmentService>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IUserService, UserService>();
+//inject the IemployeeReport with employee detail report
+builder.Services.AddScoped<IEmployeeReport,EmployeeDetailReport>();
 builder.Services.AddAutoMapper(typeof(Program));
 var app = builder.Build();
 

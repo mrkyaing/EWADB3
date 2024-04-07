@@ -1,4 +1,7 @@
-﻿using CloudHRMS.Services;
+﻿using CloudHRMS.Models.ViewModels;
+using CloudHRMS.Reports;
+using CloudHRMS.Services;
+using CloudHRMS.Utilities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Reporting.NETCore;
 using System.Text;
@@ -7,46 +10,29 @@ namespace CloudHRMS.Controllers
 {
     public class EmployeeReportController : Controller
     {
-        private readonly IWebHostEnvironment _webHostEnvironment;
-        private readonly IEmployeeService _employeeService;
-        private readonly IDepartmentService _departmentService;
+        private readonly IEmployeeReport _employeeReport;
 
-        public EmployeeReportController(IWebHostEnvironment webHostEnvironment,IEmployeeService employeeService,IDepartmentService departmentService)
+        public EmployeeReportController(IEmployeeReport employeeReport)
         {
-            this._webHostEnvironment = webHostEnvironment;
-            this._employeeService = employeeService;
-            this._departmentService = departmentService;
-            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            this._employeeReport = employeeReport;
         }
-        public IActionResult ReportByEmployeeFromCode()
+
+        public IActionResult EmployeeDetailReport() => View();
+
+        public IActionResult ReportByEmployeeFromCodeToCode(string fromCode,string toCode)
         {
-            ViewBag.Departments = _departmentService.GetAll();
-            return View();
-        }
-        [HttpPost]
-        public IActionResult ReportByEmployeeFromCode(string fromCode,string toCode,string departmentId)
-        {
-            var employeeDetail = _employeeService.GetByFromCodeToCodeDepartentId(fromCode, toCode, departmentId);
-            var rdlcPath = $"{_webHostEnvironment.WebRootPath}\\RdlcReportFiles\\EmployeeDetailReport.rdlc";
-            if (employeeDetail != null)
+            string reportname = $"EmployeeDetails_{Guid.NewGuid():N}.xlsx";
+            IList<EmployeeDetailReportViewModel> employees= _employeeReport.EmployeeDetailReport(fromCode, toCode);
+            if (employees.Any())
             {
-                Stream reportDefinition=new FileStream(rdlcPath,FileMode.Open);
-                 IList<ReportParameter> paremeters =new List< ReportParameter>();
-                paremeters.Add(new ReportParameter("rpfromCode", fromCode));
-                paremeters.Add(new ReportParameter("rptoCode", toCode));                      
-                if ("x".Equals(departmentId))
-                    paremeters.Add(new ReportParameter("rpDepartmentName", ""));
-                else
-                paremeters.Add(new ReportParameter("rpDepartmentName", _departmentService.GetById(departmentId).Name));             
-                LocalReport report = new LocalReport();
-                report.LoadReportDefinition(reportDefinition);
-                report.DataSources.Add(new ReportDataSource("EmployeeDetailDataSet", employeeDetail));
-               report.SetParameters(paremeters);
-                byte[] pdf = report.Render("PDF");
-                return File(pdf, "application/pdf");
+                var exportData = FilesIOHelper.ExporttoExcel<EmployeeDetailReportViewModel>(employees, "employeeDetailReport");
+                return File(exportData, "application/vnd.openxmlformats-officedocument.spreedsheetml.sheet", reportname);
             }
-            return View();
+            else
+            {
+                TempData["info"] = "There is no data when report to excel";
+                return View();
+            }
         }
-
     }
 }

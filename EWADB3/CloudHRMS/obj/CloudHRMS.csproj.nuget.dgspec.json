@@ -63,6 +63,10 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
             "Microsoft.AspNet.Identity.Core": {
               "target": "Package",
               "version": "[2.2.4, )"
