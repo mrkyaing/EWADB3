@@ -1,6 +1,6 @@
 ﻿@model EmployeeViewModel
 <div>
-    <h1>Entry Employee</h1>
+    <h1>Edit Employee</h1>
     @if (ViewBag.info != null)
     {
         <div class="alert alert-danger">
@@ -62,26 +62,27 @@
                 }
             </select>
         </div>
+
         <div class="mb-3">
             <label for="BasicSalary" class="form-label">Basic Salary</label>
             <input type="text" name="BasicSalary" class="form-control" value="@Model.BasicSalary">
         </div>
         <div class="mb-3">
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="Gender" value="Male"  @(Model.Gender=="Male"?"Checked":"")>
+                <input class="form-check-input" type="radio" name="Gender" value="Male"  @(Model.Gender=="m"?"Checked":"")>
                 <label class="form-check-label" for="Male">
                     Male
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="Gender" value="Female" @(Model.Gender == "Female" ? "Checked" : "")>
+                <input class="form-check-input" type="radio" name="Gender" value="Female" @(Model.Gender == "f" ? "Checked" : "")>
                 <label class="form-check-label" for="Female">
                     Female
                 </label>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="Gender" value="Other">
-                <label class="form-check-label" for="Female" @(Model.Gender == "Other" ? "Checked" : "")>
+                <label class="form-check-label" for="Female" @(Model.Gender == "o" ? "Checked" : "")>
                     Other
                 </label>
             </div>

@@ -26,8 +26,8 @@ namespace CloudHRMS.Models.ViewModels
         public IFormFile? ProfileImage { get; set; }
         public string DepartmentId { get; set; }//for entry / update 
         public string PositionId { get; set; }//for ui entry/update
-
-        public  string DepartmentInfo { get; set; }
-        public string PositionInfo { get; set; }
+        
+        public  string DepartmentInfo { get; set; }//for list data binding 
+        public string PositionInfo { get; set; }//for list data binding 
     }
 }

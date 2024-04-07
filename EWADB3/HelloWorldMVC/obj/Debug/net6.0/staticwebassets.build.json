@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zLOaMfAYeJ9qXFEF6oDhuLboKhyUTgOX+ohw25olxI0=",
+  "Hash": "A0/Bv1Oe/r80geXQ/v7D2b40d/XO/pl1c9RVxk4cy8Y=",
   "Source": "HelloWorldMVC",
   "BasePath": "_content/HelloWorldMVC",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "HelloWorldMVC\\wwwroot",
       "Source": "HelloWorldMVC",
-      "ContentRoot": "D:\\EWADB3\\EWADB3\\EWADB3\\HelloWorldMVC\\wwwroot\\",
+      "ContentRoot": "C:\\EWADB3\\EWADB3\\HelloWorldMVC\\wwwroot\\",
       "BasePath": "_content/HelloWorldMVC",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\EWADB3\\EWADB3\\EWADB3\\HelloWorldMVC\\wwwroot\\DownloadFiles\\KAPYINFOS.png",
+      "Identity": "C:\\EWADB3\\EWADB3\\HelloWorldMVC\\wwwroot\\DownloadFiles\\KAPYINFOS.png",
       "SourceId": "HelloWorldMVC",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\EWADB3\\EWADB3\\EWADB3\\HelloWorldMVC\\wwwroot\\",
+      "ContentRoot": "C:\\EWADB3\\EWADB3\\HelloWorldMVC\\wwwroot\\",
       "BasePath": "_content/HelloWorldMVC",
       "RelativePath": "DownloadFiles/KAPYINFOS.png",
       "AssetKind": "All",

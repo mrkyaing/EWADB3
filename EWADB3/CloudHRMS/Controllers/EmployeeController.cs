@@ -21,18 +21,22 @@ namespace CloudHRMS.Controllers
         }
         public IActionResult Entry()
         {
+            //for data bind to department select box Ui
             var departments = _applicationDbContext.Departments.Select(s => new DepartmentViewModel
             {
                 Id=s.Id,
                 Code=s.Code
             }).OrderBy(o=>o.Code).ToList();
             ViewBag.Departments = departments;
+            
+            //for data bind to position select box Ui
             var positions = _applicationDbContext.Positions.Select(s => new PositionViewModel
             {
                 Id = s.Id,
                 Code = s.Code
             }).OrderBy(o => o.Code).ToList();
             ViewBag.Positions = positions;
+
             return View();
         }
         private string UploadedFile(EmployeeViewModel model)
@@ -84,11 +88,14 @@ namespace CloudHRMS.Controllers
         {
             //Data Exchange from Data Model to View Model
             //DTO
+            //Linq Query Style  (from <a> in <appDbContext>
+            //                                  <> in )
             IList<EmployeeViewModel> employees =(from e in _applicationDbContext.Employees
                                                                                          join d in _applicationDbContext.Departments
                                                                                          on e.DepartmentId equals d.Id
                                                                                          join p in _applicationDbContext.Positions
-                                                                                         on e.PositionId equals p.Id select new EmployeeViewModel
+                                                                                         on e.PositionId equals p.Id 
+            select new EmployeeViewModel
             {
                 Id = e.Id,
                 Name = e.Name,
@@ -100,8 +107,8 @@ namespace CloudHRMS.Controllers
                 Phone = e.Phone,
                 Code = e.Code,
                 DOE = e.DOE,
-                DepartmentInfo=d.Name,
-                PositionInfo=p.Name,
+                DepartmentInfo=d.Code +"/"+ d.Name,
+                PositionInfo=p.Code +"/"+p.Name,
                 ProfilePicture=e.ProfilePicture??""
             }).ToList();
             return View(_employeeService.GetAll());
@@ -126,18 +133,10 @@ namespace CloudHRMS.Controllers
         }
        public IActionResult Edit(string id)
         {
-            var departments = _applicationDbContext.Departments.Select(s => new DepartmentViewModel
-            {
-                Id = s.Id,
-                Code = s.Code
-            }).OrderBy(o => o.Code).ToList();
-          
-            var positions = _applicationDbContext.Positions.Select(s => new PositionViewModel
-            {
-                Id = s.Id,
-                Code = s.Code
-            }).OrderBy(o => o.Code).ToList();        
-            EmployeeViewModel employee = _applicationDbContext.Employees.Where(x => x.Id == id).Select(s => new EmployeeViewModel
+                
+            
+            EmployeeViewModel employee = _applicationDbContext.Employees.Where(x => x.Id == id).Select(s =>
+            new EmployeeViewModel
             {
                 Id = s.Id,
                 Name = s.Name,
@@ -152,7 +151,19 @@ namespace CloudHRMS.Controllers
                 DepartmentId=s.DepartmentId,
                 PositionId=s.PositionId
             }).SingleOrDefault();
+           //for binding the department select box
+            var departments = _applicationDbContext.Departments.Select(s => new DepartmentViewModel
+            {
+                Id = s.Id,
+                Code = s.Code
+            }).OrderBy(o => o.Code).ToList();
             ViewBag.Departments = departments;
+            //for binding the position select box
+            var positions = _applicationDbContext.Positions.Select(s => new PositionViewModel
+            {
+                Id = s.Id,
+                Code = s.Code
+            }).OrderBy(o => o.Code).ToList();
             ViewBag.Positions = positions;
             return View(employee);
         }

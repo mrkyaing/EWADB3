@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\EWADB3\\EWADB3\\EWADB3\\WorkOut\\WorkOut.csproj": {}
+    "C:\\EWADB3\\EWADB3\\WorkOut\\WorkOut.csproj": {}
   },
   "projects": {
-    "D:\\EWADB3\\EWADB3\\EWADB3\\WorkOut\\WorkOut.csproj": {
+    "C:\\EWADB3\\EWADB3\\WorkOut\\WorkOut.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\EWADB3\\EWADB3\\EWADB3\\WorkOut\\WorkOut.csproj",
+        "projectUniqueName": "C:\\EWADB3\\EWADB3\\WorkOut\\WorkOut.csproj",
         "projectName": "WorkOut",
-        "projectPath": "D:\\EWADB3\\EWADB3\\EWADB3\\WorkOut\\WorkOut.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "D:\\EWADB3\\EWADB3\\EWADB3\\WorkOut\\obj\\",
+        "projectPath": "C:\\EWADB3\\EWADB3\\WorkOut\\WorkOut.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\EWADB3\\EWADB3\\WorkOut\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -63,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

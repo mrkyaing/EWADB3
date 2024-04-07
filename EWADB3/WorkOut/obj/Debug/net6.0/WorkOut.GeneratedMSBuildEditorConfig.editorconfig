@@ -9,35 +9,35 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WorkOut
 build_property.RootNamespace = WorkOut
-build_property.ProjectDir = D:\EWADB3\EWADB3\EWADB3\WorkOut\
+build_property.ProjectDir = C:\EWADB3\EWADB3\WorkOut\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\EWADB3\EWADB3\EWADB3\WorkOut
+build_property.MSBuildProjectDirectory = C:\EWADB3\EWADB3\WorkOut
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/EWADB3/EWADB3/EWADB3/WorkOut/Views/Convertor/CurrencyConvertorV1.cshtml]
+[C:/EWADB3/EWADB3/WorkOut/Views/Convertor/CurrencyConvertorV1.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udmVydG9yXEN1cnJlbmN5Q29udmVydG9yVjEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/EWADB3/EWADB3/EWADB3/WorkOut/Views/Convertor/CurrencyConvertorV2.cshtml]
+[C:/EWADB3/EWADB3/WorkOut/Views/Convertor/CurrencyConvertorV2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udmVydG9yXEN1cnJlbmN5Q29udmVydG9yVjIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/EWADB3/EWADB3/EWADB3/WorkOut/Views/Employee/Register.cshtml]
+[C:/EWADB3/EWADB3/WorkOut/Views/Employee/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/EWADB3/EWADB3/EWADB3/WorkOut/Views/Employee/SendEmployees.cshtml]
+[C:/EWADB3/EWADB3/WorkOut/Views/Employee/SendEmployees.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcU2VuZEVtcGxveWVlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/EWADB3/EWADB3/EWADB3/WorkOut/Views/Employee/SendInList.cshtml]
+[C:/EWADB3/EWADB3/WorkOut/Views/Employee/SendInList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcU2VuZEluTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/EWADB3/EWADB3/EWADB3/WorkOut/Views/Home/Index.cshtml]
+[C:/EWADB3/EWADB3/WorkOut/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

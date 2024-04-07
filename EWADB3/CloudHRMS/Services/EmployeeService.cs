@@ -31,12 +31,12 @@ namespace CloudHRMS.Services
                 }
                 try
                 {
-                 string userId=await _userService.CreateAsync(ui.Email);
-
+                    //string userId=await _userService.CreateAsync(ui.Email);
+                    string userId = "1b367d50-5571-4a51-bc23-a60b10dd3916";
                     //Data exchange from view model to data model
                     var employee = new EmployeeEntity()
                     {
-                        Id = ui.Id,//update the recrod with  the existing id 
+                        Id =Guid.NewGuid().ToString(),
                         Code = ui.Code,
                         Name = ui.Name,
                         Email = ui.Email,
@@ -46,7 +46,7 @@ namespace CloudHRMS.Services
                         Address = ui.Address,
                         BasicSalary = ui.BasicSalary,
                         Gender = ui.Gender,
-                        ModifiedAt = DateTime.Now,
+                        CreatedAt = DateTime.Now,
                         ProfilePicture = profileUrl,
                         DepartmentId = ui.DepartmentId,
                         PositionId = ui.PositionId,

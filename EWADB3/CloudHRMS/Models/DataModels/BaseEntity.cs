@@ -9,6 +9,7 @@ namespace CloudHRMS.Models.DataModels
         public string Id { get; set; }
         public DateTime CreatedAt { get; set; } 
         public DateTime? ModifiedAt { get; set; }
-        public string IpAddress { get; set;}=NetworkHelper.GetLocalIPAddress(); 
+        public string IpAddress { get; set;}=NetworkHelper.GetLocalIPAddress();
+        public bool IsInActive { get; set; }
     }
 }
